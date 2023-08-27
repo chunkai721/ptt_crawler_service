@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant M as Main
+    participant C as Crawler
+    participant L as LineInterface
+    participant D as Database
+    M->>C: start()
+    C->>D: insert_data(data)
+    D-->>C: confirmation
+    C->>L: send_message(message)
+    L-->>M: receive_message(message)
+    M->>C: stop()

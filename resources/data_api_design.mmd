@@ -1,0 +1,19 @@
+classDiagram
+    class Crawler{
+        +str board
+        +list keywords
+        +start()
+        +stop()
+    }
+    class LineInterface{
+        +str user_id
+        +send_message(message: str)
+        +receive_message(message: str)
+    }
+    class Database{
+        +str db_path
+        +insert_data(data: dict)
+        +get_data(keyword: str)
+    }
+    Crawler "1" -- "1" LineInterface: sends data to
+    Crawler "1" -- "1" Database: stores data in
